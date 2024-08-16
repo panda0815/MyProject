@@ -5,17 +5,18 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract DotaAmazingItem is ERC721, Ownable {
-    struct itemInformation {
+    struct ItemInformation {
         string ability;
         string effect;
     }
 
-    struct item {
+    struct Item {
         uint256 id;
         string name;
+        string desc;
         string imgUrl;
         uint256 price;
-        itemInformation[] informations;
+        ItemInformation[] informations;
     }
 
     uint256 private _currentTokenId;
@@ -23,9 +24,16 @@ contract DotaAmazingItem is ERC721, Ownable {
     mapping(uint256 => bool) private _tokenExists;
     mapping(uint256 => address) private _itemToOwner;
 
-    item[] public items;
+    Item[] public items;
 
-    event createdItem(item _newItem);
+    event createdItem(
+        uint256 _id,
+        string _name,
+        string _desc,
+        string _imgUrl,
+        uint256 _price,
+        ItemInformation[] _informations
+    );
 
     constructor() ERC721("GameItems", "Token") Ownable(msg.sender) {
         _currentTokenId = 0;
@@ -33,16 +41,18 @@ contract DotaAmazingItem is ERC721, Ownable {
 
     function createItem(
         string memory _name,
+        string memory _desc,
         string memory _imgUrl,
         uint256 _price,
-        itemInformation[] memory _informations
+        ItemInformation[] memory _informations
     ) external onlyOwner {
         uint256 tokenId = _currentTokenId;
         _currentTokenId++;
 
-        item memory newItem = item({
+        Item memory newItem = Item({
             id: tokenId,
             name: _name,
+            desc: _desc,
             imgUrl: _imgUrl,
             price: _price,
             informations: _informations
@@ -52,6 +62,6 @@ contract DotaAmazingItem is ERC721, Ownable {
         _tokenExists[tokenId] = true;
         _itemToOwner[tokenId] = msg.sender;
 
-        emit createdItem(newItem);
+        emit createdItem(tokenId, _name, _desc, _imgUrl, _price, _informations);
     }
 }
