@@ -1,7 +1,9 @@
 {
-  "name": "backend",
+  "name": "MyProject",
   "version": "1.0.0",
   "main": "index.js",
+  "repository": "https://github.com/panda0815/MyProject.git",
+  "author": "panda0815 <brave.panda.po@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
