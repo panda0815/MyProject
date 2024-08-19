@@ -68,5 +68,28 @@ describe("Testing DotaAmazingItem contract", function () {
         );
       }
     });
+
+    it("Should assign the minted token to the owner", async function () {
+      //mint testing value
+      const name = "Vanguard";
+      const desc =
+        "This item should protects you from other player's attacking.";
+      const level = 1;
+      const imgUrl = "#";
+      const price = 100;
+      const itemInfo = [
+        {
+          ability: "protects user",
+          effect: "user has a fire wall",
+          unit: "percent",
+          value: 20,
+        },
+      ];
+
+      await contract.mintItem(name, desc, level, imgUrl, price, itemInfo);
+
+      const tokenOwner = await contract.ownerOf(0);
+      expect(tokenOwner).to.equal(owner.address);
+    });
   });
 });
