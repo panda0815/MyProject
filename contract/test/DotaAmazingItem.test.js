@@ -91,5 +91,36 @@ describe("Testing DotaAmazingItem contract", function () {
       const tokenOwner = await contract.ownerOf(0);
       expect(tokenOwner).to.equal(owner.address);
     });
+
+    it("Should check the tokenId correctly", async function () {
+      //mint testing value
+      const name1 = "Vanguard";
+      const name2 = "shield";
+      const desc =
+        "This item should protects you from other player's attacking.";
+      const level = 1;
+      const imgUrl = "#";
+      const price = 100;
+      const itemInfo = [
+        {
+          ability: "protects user",
+          effect: "user has a fire wall",
+          unit: "percent",
+          value: 20,
+        },
+      ];
+
+      //add two item in items
+      await contract.mintItem(name1, desc, level, imgUrl, price, itemInfo);
+      await contract.mintItem(name2, desc, level, imgUrl, price, itemInfo);
+
+      //fetch the items
+      item1 = await contract.getItem(0);
+      item2 = await contract.getItem(1);
+
+      //check the data
+      expect(item1.name).to.equal(name1);
+      expect(item2.name).to.equal(name2);
+    });
   });
 });
