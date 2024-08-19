@@ -8,12 +8,15 @@ contract DotaAmazingItem is ERC721, Ownable {
     struct ItemInformation {
         string ability;
         string effect;
+        string unit;
+        uint256 value;
     }
 
     struct Item {
         uint256 id;
         string name;
         string desc;
+        uint16 itemType;
         string imgUrl;
         uint256 price;
         ItemInformation[] informations;
@@ -30,6 +33,7 @@ contract DotaAmazingItem is ERC721, Ownable {
         uint256 _id,
         string _name,
         string _desc,
+        uint16 _itemType,
         string _imgUrl,
         uint256 _price,
         ItemInformation[] _informations
@@ -42,6 +46,7 @@ contract DotaAmazingItem is ERC721, Ownable {
     function createItem(
         string memory _name,
         string memory _desc,
+        uint16 _itemType,
         string memory _imgUrl,
         uint256 _price,
         ItemInformation[] memory _informations
@@ -49,19 +54,27 @@ contract DotaAmazingItem is ERC721, Ownable {
         uint256 tokenId = _currentTokenId;
         _currentTokenId++;
 
-        Item memory newItem = Item({
-            id: tokenId,
-            name: _name,
-            desc: _desc,
-            imgUrl: _imgUrl,
-            price: _price,
-            informations: _informations
-        });
+        items.push();
+        Item storage newItem = items[items.length - 1];
+        newItem.id = tokenId;
+        newItem.name = _name;
+        newItem.imgUrl = _imgUrl;
+        newItem.price = _price;
+        for (uint256 i = 0; i < _informations.length; i++) {
+            newItem.informations.push(_informations[i]);
+        }
 
-        items.push(newItem);
         _tokenExists[tokenId] = true;
         _itemToOwner[tokenId] = msg.sender;
 
-        emit createdItem(tokenId, _name, _desc, _imgUrl, _price, _informations);
+        emit createdItem(
+            tokenId,
+            _name,
+            _desc,
+            _itemType,
+            _imgUrl,
+            _price,
+            _informations
+        );
     }
 }
