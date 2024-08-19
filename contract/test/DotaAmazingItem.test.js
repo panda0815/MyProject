@@ -1,29 +1,23 @@
-import { ethers } from "hardhat";
-import { expect } from "chai";
+const { ethers } = require("hardhat");
+const { expect } = require("chai");
 
 describe("Testing DotaAmazingItem contract", function () {
-  let contract;
-  let owner;
+  let contract, owner;
 
   beforeEach(async function () {
-    [owner] = await ethers.getSinger();
-    const DotaAmazingItem = await ethers.getDotaAmazingItemFactory(
-      "DotaAmazingItem"
-    );
+    const DotaAmazingItem = await ethers.getContractFactory("DotaAmazingItem");
+    [owner] = await ethers.getSigners();
     contract = await DotaAmazingItem.deploy();
-    await contract.deployed();
   });
 
   describe("Should check about item information", function () {
-    it("Should create and emit an item correctly", async function () {
-      const cnt = await contract.items.length();
-
-      //create testing value
+    it("Should mint an item correctly", async function () {
+      //mint testing value
       const name = "Vanguard";
       const desc =
         "This item should protects you from other player's attacking.";
-      const itemTpye = 1;
-      const imgUrl = "";
+      const level = 1;
+      const imgUrl = "#";
       const price = 100;
       const itemInfo = [
         {
@@ -34,20 +28,45 @@ describe("Testing DotaAmazingItem contract", function () {
         },
       ];
 
-      await expect(
-        contract.createItem(name, desc, itemTpye, imgUrl, price, itemInfo)
-      )
-        .to.emit(contract, "createdItem")
-        .withArgs(cnt, name, desc, itemTpye, imgUrl, price, itemInfo);
+      //mint testing item
+      await contract.mintItem(name, desc, level, imgUrl, price, itemInfo);
 
-      const item = await contract.items(cnt);
+      //fetch the saved data
+      const [
+        savedId,
+        savedName,
+        savedDesc,
+        savedLevel,
+        savedImgUrl,
+        savedPrice,
+        savedItemInfo,
+      ] = await contract.getItem(0);
 
-      expect(item.id).to.equal(cnt);
-      expect(item.name).to.equal(name);
-      expect(item.desc).to.equal(desc);
-      expect(item.itemTpye).to.equal(itemTpye);
-      expect(item.price).to.equal(price);
-      expect(item.itemInfo.length).to.equal(itemInfo.length());
+      //show the fetching data
+      // console.log(savedId.toString());
+      // console.log(savedName);
+      // console.log(savedDesc);
+      // console.log(savedLevel.toString());
+      // console.log(savedImgUrl);
+      // console.log(savedPrice.toString());
+      // console.log(savedItemInfo);
+
+      //check the saved item
+      expect(savedId).to.equal(0);
+      expect(savedName).to.equal(name);
+      expect(savedDesc).to.equal(desc);
+      expect(savedLevel).to.equal(level);
+      expect(savedImgUrl).to.equal(imgUrl);
+      expect(savedPrice).to.equal(price);
+
+      for (let i = 0; i < itemInfo.length; i++) {
+        expect(savedItemInfo[i].ability).to.equal(itemInfo[0].ability);
+        expect(savedItemInfo[i].effect).to.equal(itemInfo[0].effect);
+        expect(savedItemInfo[i].unit).to.equal(itemInfo[0].unit);
+        expect(savedItemInfo[i].value.toString()).to.equal(
+          itemInfo[0].value.toString()
+        );
+      }
     });
   });
 });
