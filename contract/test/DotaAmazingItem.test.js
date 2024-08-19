@@ -10,7 +10,7 @@ describe("Testing DotaAmazingItem contract", function () {
     contract = await DotaAmazingItem.deploy();
   });
 
-  describe("Should check about item information", function () {
+  describe("Should check about an item information", function () {
     it("Should mint an item correctly", async function () {
       //mint testing value
       const name = "Vanguard";
