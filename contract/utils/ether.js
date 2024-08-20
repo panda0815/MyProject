@@ -1,6 +1,6 @@
 //this function is to check the amount ETH of your wallet
-import { ethers } from "ethers";
-import dotenv from "dotenv";
+const { ethers } = require("ethers");
+const dotenv = require("dotenv");
 
 dotenv.config();
 
