@@ -1,8 +1,19 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+const Root = styled.div`
+  background: ${(props) => props.theme.colors.bg};
+  color: ${(props) => props.theme.colors.text};
+  min-height: 100vh;
+`;
 
-const inter = Inter({ subsets: ["latin"] });
+import Head from "next/head";
+import styled from "styled-components";
 
 export default function Home() {
-  return <div>Hello</div>;
+  return (
+    <Root>
+      <Head>
+        <title>Dota Amazing Items</title>
+      </Head>
+      <div>This is Home Page</div>
+    </Root>
+  );
 }

@@ -3,8 +3,10 @@
 # dependencies
 /node_modules
 /.pnp
+yarn.lock
 .pnp.js
 .yarn/install-state.gz
+.DS_Store
 
 # testing
 /coverage
