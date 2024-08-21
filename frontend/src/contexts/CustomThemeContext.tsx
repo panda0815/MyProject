@@ -1,20 +1,15 @@
 import { createContext, useState } from "react";
-import { darkTheme } from "../components/Theme";
+import { darkTheme, lightTheme, Theme } from "../components/Theme";
 import { ThemeProvider } from "styled-components";
 
 type ThemeContextType = {
-  theme: any;
-  setTheme: (t: any) => void;
-  currentTheme: string;
-  setCurrentTheme: React.Dispatch<React.SetStateAction<string>>;
+  theme: Theme;
+  toggleTheme: () => void;
 };
 
-export const CustomThemeContext = createContext<ThemeContextType>({
-  theme: {},
-  setTheme: () => {},
-  currentTheme: "",
-  setCurrentTheme: () => {},
-});
+export const CustomThemeContext = createContext<ThemeContextType | undefined>(
+  undefined
+);
 
 type Props = {
   children: React.ReactNode;
@@ -22,12 +17,13 @@ type Props = {
 
 export const CustomThemeProvider: React.FC<Props> = ({ children }) => {
   const [theme, setTheme] = useState(darkTheme);
-  const [currentTheme, setCurrentTheme] = useState("dark");
+
+  const toggleTheme = () => {
+    setTheme(theme === darkTheme ? lightTheme : darkTheme);
+  };
 
   return (
-    <CustomThemeContext.Provider
-      value={{ theme, setTheme, currentTheme, setCurrentTheme }}
-    >
+    <CustomThemeContext.Provider value={{ theme, toggleTheme }}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </CustomThemeContext.Provider>
   );

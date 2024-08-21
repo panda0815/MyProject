@@ -1,11 +1,20 @@
+export interface Theme {
+  colors: {
+    bg: string;
+    text: string;
+  };
+}
+
 export const darkTheme = {
-  bgColor: "#333333",
-  fontColor: "#ffffff",
+  colors: {
+    bg: "#333333",
+    text: "#ffffff",
+  },
 };
 
 export const lightTheme = {
-  bgColor: "#ffffff",
-  fontColor: "#000000",
+  colors: {
+    bg: "#ffffff",
+    text: "#000000",
+  },
 };
-
-// export default darkTheme;
