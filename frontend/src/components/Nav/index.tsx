@@ -11,9 +11,8 @@ const Nav: React.FC<Props> = ({ children }) => {
 
   return (
     <>
-      <FullscreenNav showBar={!store.isMobile}>{children}</FullscreenNav>
-
-      <MobileNav showBar={store.isMobile}>{children}</MobileNav>
+      <FullscreenNav showBar={!store.isSmall} />
+      <MobileNav showBar={store.isSmall} />
     </>
   );
 };

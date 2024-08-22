@@ -41,7 +41,12 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const FullscreenNav = () => {
+type Props = {
+  children?: React.ReactNode;
+  showBar: Boolean;
+};
+
+const FullscreenNav: React.FC<Props> = ({ children, showBar }) => {
   const router = useRouter();
 
   const isActive = useCallback(
@@ -57,7 +62,7 @@ const FullscreenNav = () => {
   );
 
   return (
-    <Root>
+    <Root display={showBar ? "flex" : "none"}>
       <Box>
         <Heading size={"xl"} userSelect={"none"}>
           Dota Amazing Items
@@ -77,6 +82,7 @@ const FullscreenNav = () => {
           );
         })}
       </Flex>
+      {children}
     </Root>
   );
 };

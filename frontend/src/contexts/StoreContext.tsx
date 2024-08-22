@@ -13,7 +13,7 @@ type ViewSize = {
 };
 
 type StoreType = {
-  isMobile: Boolean;
+  isSmall: Boolean;
   viewSize: ViewSize;
 };
 
@@ -23,7 +23,7 @@ type StoreContextType = {
 };
 
 const initState: StoreType = {
-  isMobile: false,
+  isSmall: false,
   viewSize: { width: 0, height: 0 },
 };
 
@@ -31,9 +31,10 @@ type Props = {
   children: React.ReactNode;
 };
 
-export const StoreContext = createContext<StoreContextType | undefined>(
-  undefined
-);
+export const StoreContext = createContext<StoreContextType>({
+  store: initState,
+  setStore: () => {},
+});
 
 export const StoreProvider: React.FC<Props> = ({ children }) => {
   const [store, setStore] = useState(initState);
@@ -41,12 +42,12 @@ export const StoreProvider: React.FC<Props> = ({ children }) => {
   const onResize = useCallback(() => {
     const width = window.innerWidth;
     const height = window.innerHeight;
-    const isMobile = width <= DEVICE_SIZE.mobile;
+    const isSmall = width <= DEVICE_SIZE.tablet;
     const viewSize = { width: width, height: height };
 
     setStore((store) => ({
       ...store,
-      isMobile,
+      isSmall,
       viewSize,
     }));
   }, []);

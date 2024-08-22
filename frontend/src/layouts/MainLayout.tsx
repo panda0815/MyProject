@@ -13,7 +13,7 @@ const Root = styled(Box)`
 const MainLayout: React.FC<Props> = ({ children }) => {
   return (
     <Root>
-      <Nav>{children}</Nav>
+      <Nav />
     </Root>
   );
 };
