@@ -1,15 +1,16 @@
 import Nav from "@/components/Nav";
+import { BODY_TOP_MARGIN } from "@/components/Resposive";
 import { Box } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
 
-type Props = {
-  children?: React.ReactNode;
-};
-
 const Root = styled(Box)`
   min-height: 100vh;
 `;
+
+type Props = {
+  children?: React.ReactNode;
+};
 
 const MainLayout: React.FC<Props> = ({ children }) => {
   return (
@@ -22,7 +23,7 @@ const MainLayout: React.FC<Props> = ({ children }) => {
           exit={{ opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          {children}
+          <Box mt={BODY_TOP_MARGIN}>{children}</Box>
         </motion.div>
       </AnimatePresence>
     </Root>
