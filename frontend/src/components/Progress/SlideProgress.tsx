@@ -27,11 +27,12 @@ const SlideProgress: React.FC<Props> = ({ count, onChangeId }) => {
         if (newValues[currentId] < maxValue) {
           newValues[currentId]++;
         } else {
-          newValues[currentId] = 0;
+          // newValues[currentId] = 0;
           if (currentId < count - 1) {
             setCurrentId(currentId + 1);
             onChangeId(currentId + 1);
           } else {
+            for (let i = 0; i < count; i++) newValues[i] = 0;
             setCurrentId(0);
             onChangeId(0);
           }

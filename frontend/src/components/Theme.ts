@@ -7,6 +7,9 @@ export interface Theme {
     menuActiveText: string;
     grey: string;
   };
+  gradients: {
+    whiteToBlack: string;
+  };
 }
 
 export const lightTheme = {
@@ -27,5 +30,9 @@ export const darkTheme = {
     menuText: "#000000",
     menuActiveText: "#66ffff",
     grey: "#b3b3b3",
+  },
+  gradients: {
+    whiteToBlack:
+      "linear-gradient(89deg, rgba(255, 255, 255, 0.8) 10%, rgba(0, 0, 0, 0.8) 100%)",
   },
 };
