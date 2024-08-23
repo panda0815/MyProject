@@ -1,4 +1,6 @@
 import MainLayout from "@/layouts/MainLayout";
+import News from "@/modules/products/News";
+import HomeSlider from "@/modules/sliders/HomeSlider";
 import Head from "next/head";
 import styled from "styled-components";
 
@@ -14,7 +16,9 @@ export default function Home() {
       <Head>
         <title>Dota Amazing Items</title>
       </Head>
-      <MainLayout></MainLayout>
+      <MainLayout>
+        <HomeSlider />
+      </MainLayout>
     </Root>
   );
 }

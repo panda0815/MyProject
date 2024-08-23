@@ -5,6 +5,7 @@ export interface Theme {
     menuBg: string;
     menuText: string;
     menuActiveText: string;
+    grey: string;
   };
 }
 
@@ -25,5 +26,6 @@ export const darkTheme = {
     menuBg: "#fdf84c",
     menuText: "#000000",
     menuActiveText: "#66ffff",
+    grey: "#b3b3b3",
   },
 };
