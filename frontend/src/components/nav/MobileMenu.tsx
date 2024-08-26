@@ -1,10 +1,10 @@
 import { CloseIcon } from "@chakra-ui/icons";
-import { Box, Flex, Heading, Link, textDecoration } from "@chakra-ui/react";
+import { Box, Flex, Heading, Link } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useCallback } from "react";
 import { useRouter } from "next/router";
-import { NAV_ITEMS } from "../../constants";
+import { NAV_ITEMS } from "../constants";
 
 const Root = styled(Box)`
   position: fixed;

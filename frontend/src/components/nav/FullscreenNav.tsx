@@ -1,9 +1,9 @@
 import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
 import styled from "styled-components";
-import { NAV_ITEMS } from "../../constants";
 import Link from "next/link";
 import { useCallback } from "react";
 import { useRouter } from "next/router";
+import { NAV_ITEMS } from "../constants";
 
 const Root = styled(Flex)`
   height: 100px;
@@ -81,8 +81,8 @@ const FullscreenNav: React.FC<Props> = ({ showBar }) => {
           );
         })}
       </Flex>
-      <Spacer />
-      <Flex>asddsa</Flex>
+      <Flex>aaa</Flex>
+      <Flex>bbb</Flex>
     </Root>
   );
 };

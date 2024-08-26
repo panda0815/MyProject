@@ -25,6 +25,7 @@ import {
   HiOutlineThumbUp,
 } from "react-icons/hi";
 import styled from "styled-components";
+import ProductCardMenu from "../dropButton/ProductCardMenu";
 
 const StyledCard = styled(Card)`
   width: 400px;
@@ -47,19 +48,7 @@ const ProductCard = () => {
               <Text>Creator, Chakra UI</Text>
             </Box>
           </Flex>
-          <Menu>
-            <MenuButton
-              as={IconButton}
-              aria-label="Options"
-              icon={<HiDotsHorizontal />}
-              variant="outline"
-              border={"none"}
-            />
-            <MenuList>
-              <MenuItem icon={<GrStatusGood />}>BUY</MenuItem>
-              <MenuItem icon={<HiOutlineShoppingCart />}>ADD CART</MenuItem>
-            </MenuList>
-          </Menu>
+          <ProductCardMenu />
         </Flex>
       </CardHeader>
       <CardBody>

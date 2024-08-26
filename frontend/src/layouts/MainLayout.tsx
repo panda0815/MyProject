@@ -1,4 +1,4 @@
-import TopNav from "@/components/nav/top";
+import TopNav from "@/components/nav";
 import { BODY_TOP_MARGIN } from "@/components/Resposive";
 import { MEDIA_DEVICE } from "@/utils/device";
 import { Box } from "@chakra-ui/react";
