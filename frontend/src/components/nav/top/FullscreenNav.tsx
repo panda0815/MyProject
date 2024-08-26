@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
 import styled from "styled-components";
-import { NAV_ITEMS } from "../constants";
+import { NAV_ITEMS } from "../../constants";
 import Link from "next/link";
 import { useCallback } from "react";
 import { useRouter } from "next/router";

@@ -5,7 +5,10 @@ export interface Theme {
     menuBg: string;
     menuText: string;
     menuActiveText: string;
+    border: string;
     grey: string;
+    white: string;
+    black: string;
   };
   gradients: {
     whiteToBlack: string;
@@ -29,7 +32,10 @@ export const darkTheme = {
     menuBg: "#fdf84c",
     menuText: "#000000",
     menuActiveText: "#66ffff",
+    border: "#666666",
     grey: "#b3b3b3",
+    white: "#ffffff",
+    black: "#000000",
   },
   gradients: {
     whiteToBlack:
