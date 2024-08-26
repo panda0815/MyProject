@@ -1,4 +1,3 @@
-import { DragHandleIcon } from "@chakra-ui/icons";
 import {
   Avatar,
   Box,
@@ -11,11 +10,18 @@ import {
   Heading,
   IconButton,
   Image,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Text,
 } from "@chakra-ui/react";
+import { GrStatusGood } from "react-icons/gr";
 import {
+  HiDotsHorizontal,
   HiOutlineChatAlt2,
   HiOutlineHeart,
+  HiOutlineShoppingCart,
   HiOutlineThumbUp,
 } from "react-icons/hi";
 import styled from "styled-components";
@@ -23,6 +29,7 @@ import styled from "styled-components";
 const StyledCard = styled(Card)`
   width: 400px;
   margin: 30px;
+  cursor: pointer;
 `;
 
 const StyledImg = styled(Box)``;
@@ -40,12 +47,19 @@ const ProductCard = () => {
               <Text>Creator, Chakra UI</Text>
             </Box>
           </Flex>
-          <IconButton
-            variant={"ghost"}
-            colorScheme="grey"
-            aria-label="See Menu"
-            icon={<DragHandleIcon />}
-          />
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<HiDotsHorizontal />}
+              variant="outline"
+              border={"none"}
+            />
+            <MenuList>
+              <MenuItem icon={<GrStatusGood />}>BUY</MenuItem>
+              <MenuItem icon={<HiOutlineShoppingCart />}>ADD CART</MenuItem>
+            </MenuList>
+          </Menu>
         </Flex>
       </CardHeader>
       <CardBody>

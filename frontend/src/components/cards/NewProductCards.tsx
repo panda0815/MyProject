@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import ProductCard from "./ProductCard";
 
 const NewProductCards = () => {
-  const newProducts = Array(5).fill(0);
+  const newProducts = Array(10).fill(0);
 
   return (
     <>
