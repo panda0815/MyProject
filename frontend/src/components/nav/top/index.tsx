@@ -17,7 +17,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-const Nav: React.FC<Props> = ({ children }) => {
+const TopNav: React.FC<Props> = ({ children }) => {
   const { store } = useStore();
 
   return (
@@ -28,4 +28,4 @@ const Nav: React.FC<Props> = ({ children }) => {
   );
 };
 
-export default Nav;
+export default TopNav;

@@ -42,11 +42,10 @@ const StyledLink = styled(Link)`
 `;
 
 type Props = {
-  children?: React.ReactNode;
-  showBar: Boolean;
+  showBar?: Boolean;
 };
 
-const FullscreenNav: React.FC<Props> = ({ children, showBar }) => {
+const FullscreenNav: React.FC<Props> = ({ showBar }) => {
   const router = useRouter();
 
   const isActive = useCallback(
@@ -82,7 +81,8 @@ const FullscreenNav: React.FC<Props> = ({ children, showBar }) => {
           );
         })}
       </Flex>
-      {children}
+      <Spacer />
+      <Flex>asddsa</Flex>
     </Root>
   );
 };

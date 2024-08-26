@@ -8,7 +8,6 @@ import styled from "styled-components";
 const Root = styled(Box)`
   background: ${(props) => props.theme.colors.bg};
   color: ${(props) => props.theme.colors.text};
-  min-height: 100vh;
 `;
 
 export default function Home() {
