@@ -1,4 +1,5 @@
-import DesktopMenu from "@/components/list/productMenu/DesktopMenu";
+import DesktopCategory from "@/components/category/DesktopCategory";
+import DesktopProductContainer from "@/components/list/DesktopProductContainer";
 import { useStore } from "@/hooks/useStore";
 import { Box, Grid, GridItem } from "@chakra-ui/react";
 import styled from "styled-components";
@@ -22,10 +23,12 @@ const ProductsLayout: React.FC<Props> = ({ children }) => {
         templateColumns="repeat(6, 1fr)"
         gap={4}
       >
-        <GridItem colSpan={1} borderRight={"1px solid"}>
-          <DesktopMenu />
+        <GridItem colSpan={1} borderRight={"1px solid"} overflow="hidden">
+          <DesktopCategory />
         </GridItem>
-        <GridItem colSpan={5} />
+        <GridItem colSpan={5}>
+          <DesktopProductContainer />
+        </GridItem>
       </Grid>
     </Root>
   );

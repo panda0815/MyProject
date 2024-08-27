@@ -2,8 +2,6 @@ import { PRODUCT_CATEGORY } from "@/components/constants";
 import ProductCategory from "@/components/text/ProductCategory";
 import { SearchIcon } from "@chakra-ui/icons";
 import {
-  Box,
-  Button,
   Flex,
   IconButton,
   Input,
@@ -18,7 +16,7 @@ const Root = styled(Flex)`
   align-items: center;
 `;
 
-const DesktopMenu = () => {
+const DesktopCategory = () => {
   const [selectedId, setSelectedId] = useState(0);
 
   const onSelect = (id: number) => {
@@ -52,4 +50,4 @@ const DesktopMenu = () => {
   );
 };
 
-export default DesktopMenu;
+export default DesktopCategory;

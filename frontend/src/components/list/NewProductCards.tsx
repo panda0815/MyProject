@@ -8,7 +8,7 @@ const NewProductCards = () => {
     <>
       {newProducts.map((item, index) => {
         return (
-          <Box key={index}>
+          <Box key={index} m={"10px 20px"}>
             <ProductCard />
           </Box>
         );

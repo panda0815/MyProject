@@ -1,5 +1,7 @@
+import ProductsLayout from "@/layouts/ProductsLayout";
+
 const AllProducts = () => {
-  return <></>;
+  return <ProductsLayout />;
 };
 
 export default AllProducts;

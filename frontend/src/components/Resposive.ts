@@ -1,3 +1,5 @@
+import { css } from "@emotion/react";
+
 export const HOME_SLIDER_HEIGHT = {
   base: "250px",
   sm: "350px",
@@ -21,3 +23,24 @@ export const BODY_TOP_MARGIN = {
   lg: "100px",
   xl: "100px",
 };
+
+export const PRODUCT_GRID_COLUMN = css`
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 1600px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: 2000px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  @media (min-width: 2400px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  @media (min-width: 2800px) {
+    grid-template-columns: repeat(7, 1fr);
+  }
+`;

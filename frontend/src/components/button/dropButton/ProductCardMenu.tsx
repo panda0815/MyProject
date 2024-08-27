@@ -6,7 +6,11 @@ import {
   MenuList,
 } from "@chakra-ui/react";
 import { GrStatusGood } from "react-icons/gr";
-import { HiDotsHorizontal, HiOutlineShoppingCart } from "react-icons/hi";
+import {
+  HiDotsHorizontal,
+  HiOutlineShoppingCart,
+  HiOutlineTag,
+} from "react-icons/hi";
 
 const ProductCardMenu = () => {
   return (
@@ -21,6 +25,7 @@ const ProductCardMenu = () => {
       <MenuList>
         <MenuItem icon={<GrStatusGood />}>BUY</MenuItem>
         <MenuItem icon={<HiOutlineShoppingCart />}>ADD CART</MenuItem>
+        <MenuItem icon={<HiOutlineTag />}>MORE DETAIL</MenuItem>
       </MenuList>
     </Menu>
   );
