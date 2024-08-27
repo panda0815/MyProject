@@ -1,4 +1,4 @@
-import NewProductCards from "@/components/cards/NewProductCards";
+import NewProductCards from "@/components/list/NewProductCards";
 import { Box, Heading } from "@chakra-ui/react";
 import ScrollContainer from "react-indiana-drag-scroll";
 import styled from "styled-components";

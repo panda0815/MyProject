@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import ProductCard from "./ProductCard";
+import ProductCard from "../cards/ProductCard";
 
 const NewProductCards = () => {
   const newProducts = Array(10).fill(0);

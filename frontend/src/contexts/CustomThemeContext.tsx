@@ -7,12 +7,13 @@ type ThemeContextType = {
   toggleTheme: () => void;
 };
 
-export const CustomThemeContext = createContext<ThemeContextType | undefined>(
-  undefined
-);
+export const CustomThemeContext = createContext<ThemeContextType>({
+  theme: darkTheme,
+  toggleTheme: () => {},
+});
 
 type Props = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 export const CustomThemeProvider: React.FC<Props> = ({ children }) => {
