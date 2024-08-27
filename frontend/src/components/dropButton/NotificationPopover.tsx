@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import { HiOutlineBell } from "react-icons/hi";
 import styled from "styled-components";
 import NotificationList from "../list/NotificationList";
+import ScrollContainer from "react-indiana-drag-scroll";
 
 const AlarmBox = styled(Flex)`
   position: relative;
@@ -29,6 +30,10 @@ const BadgeBox = styled(Box)`
   height: 10px;
   border-radius: 5px;
   background: red;
+`;
+
+const NotificationBox = styled(Box)`
+  max-height: 150px;
 `;
 
 const NotificationPopover = () => {
@@ -67,9 +72,11 @@ const NotificationPopover = () => {
         <PopoverCloseButton />
         <PopoverBody>
           {show ? (
-            <Box>
-              <NotificationList items={testTexts} />
-            </Box>
+            <ScrollContainer>
+              <NotificationBox>
+                <NotificationList items={testTexts} />
+              </NotificationBox>
+            </ScrollContainer>
           ) : (
             <NotificationList>There is no notification.</NotificationList>
           )}
