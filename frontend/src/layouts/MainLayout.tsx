@@ -9,7 +9,7 @@ const Root = styled(Box)`
   min-height: calc(100vh - 100px);
 
   @media ${MEDIA_DEVICE.tablet} {
-    min-height: calc(100vh - 50px);
+    min-height: calc(100vh - 60px);
   }
 `;
 

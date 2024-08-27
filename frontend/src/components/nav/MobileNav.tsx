@@ -3,11 +3,13 @@ import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
 import { useState } from "react";
 import styled from "styled-components";
 import MenuList from "./MobileMenu";
+import NotificationPopover from "../button/dropButton/NotificationPopover";
+import UserAccountPopover from "../button/dropButton/UserAccountPopover";
 
 const Root = styled(Box)`
   width: 100%;
-  height: 50px;
-  padding: 10px 30px;
+  height: 60px;
+  padding: 5px 30px;
 `;
 
 const MenuIconContainer = styled(Flex)`
@@ -32,16 +34,19 @@ const MobileNav: React.FC<Props> = ({ children, showBar }) => {
 
   return (
     <Root display={showBar ? "block" : "none"}>
-      <Flex alignItems={"center"}>
+      <Flex alignItems={"center"} gap={2}>
+        <MenuIconContainer onClick={() => isShow(true)}>
+          <HamburgerIcon boxSize={5} />
+        </MenuIconContainer>
+        <Spacer />
         <Box>
           <Heading size={"md"} userSelect={"none"}>
             icon place
           </Heading>
         </Box>
         <Spacer />
-        <MenuIconContainer onClick={() => isShow(true)}>
-          <HamburgerIcon boxSize={5} />
-        </MenuIconContainer>
+        <NotificationPopover />
+        <UserAccountPopover />
       </Flex>
       {showMenuList && <MenuList onClose={() => isShow(false)} />}
     </Root>

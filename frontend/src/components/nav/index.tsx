@@ -12,12 +12,7 @@ const Root = styled(Box)`
   background: ${(props) => props.theme.colors.bg};
   border-bottom: 1px solid ${(props) => props.theme.colors.border};
 `;
-
-type Props = {
-  children?: React.ReactNode;
-};
-
-const TopNav: React.FC<Props> = ({ children }) => {
+const TopNav = () => {
   const { store } = useStore();
 
   return (

@@ -15,9 +15,9 @@ export const SLIDE_PROGRESS_HEIGHT = {
 };
 
 export const BODY_TOP_MARGIN = {
-  base: "50px",
-  sm: "50px",
-  md: "50px",
+  base: "60px",
+  sm: "60px",
+  md: "60px",
   lg: "100px",
   xl: "100px",
 };
