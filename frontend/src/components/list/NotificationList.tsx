@@ -1,4 +1,4 @@
-import NotificationNote from "../textArea/NotificationNote";
+import NotificationNote from "../text/textArea/NotificationNote";
 
 type Props = {
   items?: Array<string>;

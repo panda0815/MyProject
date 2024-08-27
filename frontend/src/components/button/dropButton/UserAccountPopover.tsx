@@ -15,7 +15,7 @@ import {
   PopoverTrigger,
 } from "@chakra-ui/react";
 import { useContext, useEffect, useState } from "react";
-import UserAccountHeader from "../../textGroup/UserAccountHeader";
+import UserAccountHeader from "../../text/textGroup/UserAccountHeader";
 import ProfileLink from "../buttonGroup/ProfileLink";
 import Setting from "../buttonGroup/Setting";
 import styled from "styled-components";
