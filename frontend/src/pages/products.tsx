@@ -1,4 +1,5 @@
 import MainLayout from "@/layouts/MainLayout";
+import ProductsLayout from "@/layouts/ProductsLayout";
 import { Box } from "@chakra-ui/react";
 import Head from "next/head";
 import styled from "styled-components";
@@ -14,7 +15,9 @@ const Products = () => {
       <Head>
         <title>Dota Amazing Items | Products</title>
       </Head>
-      <MainLayout></MainLayout>
+      <MainLayout>
+        <ProductsLayout />
+      </MainLayout>
     </Root>
   );
 };

@@ -8,3 +8,30 @@ export const NAV_ITEMS = [
     url: "/products",
   },
 ];
+
+export const PRODUCT_CATEGORY = [
+  {
+    label: "All",
+    img: "#",
+  },
+  {
+    label: "String",
+    img: "#",
+  },
+  {
+    label: "Agility",
+    img: "#",
+  },
+  {
+    label: "Intelligence",
+    img: "#",
+  },
+  {
+    label: "Damage",
+    img: "#",
+  },
+  {
+    label: "Defense",
+    img: "#",
+  },
+];
