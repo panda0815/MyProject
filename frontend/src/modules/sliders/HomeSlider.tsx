@@ -1,4 +1,4 @@
-import SlideProgress from "@/components/Progress/SlideProgress";
+import SlideProgress from "@/components/progress/SlideProgress";
 import { HOME_SLIDER_HEIGHT } from "@/components/Resposive";
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
