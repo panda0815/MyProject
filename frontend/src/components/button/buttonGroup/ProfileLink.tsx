@@ -1,4 +1,4 @@
-import { Avatar, Box, Icon, Link, Text } from "@chakra-ui/react";
+import { Avatar, Badge, Box, Icon, Link, Text } from "@chakra-ui/react";
 import { BsChatRightTextFill } from "react-icons/bs";
 import styled from "styled-components";
 
@@ -17,7 +17,12 @@ const StyledBox = styled(Box)`
   justify-content: center;
 `;
 
-const ProfileLink = () => {
+type Props = {
+  children?: React.ReactNode;
+  unRead: number;
+};
+
+const ProfileLink: React.FC<Props> = ({ children, unRead }) => {
   return (
     <>
       <StyledLink gap={2} href="/profile" _hover={{ textDecoration: "none" }}>
@@ -31,6 +36,11 @@ const ProfileLink = () => {
           <BsChatRightTextFill fontSize={25} />
         </StyledBox>
         <Text fontSize={20}>DM Chat</Text>
+        {unRead > 0 && (
+          <Badge colorScheme="red" variant={"solid"} borderRadius={15}>
+            +{unRead}
+          </Badge>
+        )}
       </StyledLink>
     </>
   );
