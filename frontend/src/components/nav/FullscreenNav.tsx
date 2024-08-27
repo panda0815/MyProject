@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useCallback } from "react";
 import { useRouter } from "next/router";
 import { NAV_ITEMS } from "../constants";
-import NotificationPopover from "../dropButton/NotificationPopover";
+import NotificationPopover from "../button/dropButton/NotificationPopover";
+import UserAccountPopover from "../button/dropButton/UserAccountPopover";
 
 const Root = styled(Flex)`
   height: 100px;
@@ -83,7 +84,7 @@ const FullscreenNav: React.FC<Props> = ({ showBar }) => {
         })}
       </Flex>
       <NotificationPopover />
-      <Flex>bbb</Flex>
+      <UserAccountPopover />
     </Root>
   );
 };
