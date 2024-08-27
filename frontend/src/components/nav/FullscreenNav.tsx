@@ -63,7 +63,7 @@ const FullscreenNav: React.FC<Props> = ({ showBar }) => {
   );
 
   return (
-    <Root display={showBar ? "flex" : "none"}>
+    <Root display={showBar ? "flex" : "none"} gap={2}>
       <Box>
         <Heading size={"xl"} userSelect={"none"}>
           Dota Amazing Items

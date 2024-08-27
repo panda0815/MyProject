@@ -40,7 +40,6 @@ const UserAccountPopover = () => {
           <UserAccountHeader />
         </PopoverHeader>
         <PopoverArrow bg={theme.colors.bg} />
-        <PopoverCloseButton />
         <PopoverBody border={"none"}>
           <ProfileLink />
           <Divider />
