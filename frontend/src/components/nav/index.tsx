@@ -1,5 +1,5 @@
 import { useStore } from "@/hooks/useStore";
-import FullscreenNav from "./FullscreenNav";
+import FullscreenNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 import styled from "styled-components";
 import { Box } from "@chakra-ui/react";
